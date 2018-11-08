@@ -2,6 +2,10 @@
 #define PLAYERMAINWIN_H
 
 #include <QMainWindow>
+#include <QUrl>
+#include <QVideoWidget>
+#include <QMediaPlayer>
+#include <QListWidget>
 
 namespace Ui {
 class PlayerMainWin;
@@ -17,6 +21,16 @@ public:
 
 private:
     Ui::PlayerMainWin *ui;
+    QVideoWidget *videoWidget;
+    QUrl *url;
+    QMediaPlayer * mediaPlayer;
+    QListWidget * channelList;
+
+private slots:
+    void playUrl();
+    void choseChannel();
+    void fullScreen();
+
 };
 
 #endif // PLAYERMAINWIN_H
