@@ -5,6 +5,7 @@ PlayerMainWin::PlayerMainWin(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::PlayerMainWin)
 {
+
     ui->setupUi(this);
     QWidget *widget = new QWidget;
     this->setCentralWidget(widget);
@@ -25,7 +26,7 @@ PlayerMainWin::PlayerMainWin(QWidget *parent) :
     mainLayout->addWidget(videoWidget);
     mainLayout->addWidget(channelList);
     widget->setLayout(mainLayout);
-    QObject::connect(channelList,SIGNAL(itemSelectionChanged()),this,SLOT(playUrl()));
+    QObject::connect(channelList,SIGNAL(itemSelectionChanged()),this,SLOT(setUrl()));
 }
 
 void PlayerMainWin::playUrl()
@@ -35,6 +36,11 @@ void PlayerMainWin::playUrl()
     videoWidget->show();
 }
 
+void PlayerMainWin::setUrl()
+{
+    m_url = "http://183.251.61.207/PLTV/88888888/224/3221225820/index.m3u8";
+    qDebug()<<m_url;
+}
 void PlayerMainWin::choseChannel()
 {
 

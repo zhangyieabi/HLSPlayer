@@ -1,0 +1,14 @@
+prefix=/home/ruy/workspace/Qt5/My/HLSPlayer/ffmpeg
+exec_prefix=${prefix}
+libdir=/home/ruy/workspace/Qt5/My/HLSPlayer/ffmpeg/lib
+includedir=/home/ruy/workspace/Qt5/My/HLSPlayer/ffmpeg/include
+
+Name: libswscale
+Description: FFmpeg image rescaling library
+Version: 5.2.100
+Requires: 
+Requires.private: libavutil >= 56.18.102
+Conflicts:
+Libs: -L${libdir}  -lswscale 
+Libs.private: -lm
+Cflags: -I${includedir}
